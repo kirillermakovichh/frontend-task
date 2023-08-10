@@ -4,7 +4,7 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    const res = await fetch("https://frontend-task-sigma.vercel.app/api/topics", {
+    const res = await fetch("https://frontend-task-jet.vercel.app/api/topics", {
       cache: "no-store",
     });
 

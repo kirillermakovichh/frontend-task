@@ -13,7 +13,7 @@ export default function EditTopicForm({ id, title, description }) {
     e.preventDefault();
 
     try {
-      const res = await fetch(`https://frontend-task-sigma.vercel.app/api/topics/${id}`, {
+      const res = await fetch(`https://frontend-task-jet.vercel.app/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
