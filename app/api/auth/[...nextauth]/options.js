@@ -7,7 +7,7 @@ export const options = {
 
         return {
             ...profile,
-            id: profile.id.toString(),
+            id: profile.id,
             image: profile.avatar_url,
         }
       },
