@@ -3,6 +3,12 @@ import { options } from "../app/api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
 
 export default async function Navbar() {
+  /* The line `const session = await getServerSession(options);` is retrieving the user session from the
+server. It is using the `getServerSession` function from the `next-auth/next` package and passing in
+the `options` object as an argument. The `options` object contains the configuration for the
+authentication provider. The `await` keyword is used to wait for the session to be retrieved before
+continuing with the execution of the code. The retrieved session is then stored in the `session`
+variable. */
   const session = await getServerSession(options);
 
   return (

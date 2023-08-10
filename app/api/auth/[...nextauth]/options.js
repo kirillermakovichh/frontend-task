@@ -1,5 +1,8 @@
 import GithubProvider from "next-auth/providers/github";
 
+/* The code is exporting an object named `options` which contains a property named `providers`. The
+`providers` property is an array that contains a single element, which is an instance of the
+`GithubProvider` class. */
 export const options = {
   providers: [
     GithubProvider({

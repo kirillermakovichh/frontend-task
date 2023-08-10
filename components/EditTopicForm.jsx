@@ -9,23 +9,40 @@ export default function EditTopicForm({ id, title, description }) {
 
   const router = useRouter();
 
+  /**
+   * The `handleSubmit` function is an asynchronous function that handles form submission by making a
+   * PUT request to update a topic and then refreshing the page.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`https://frontend-task-jet.vercel.app/api/topics/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ newTitle, newDescription }),
-      });
+      /* The code `const res = await fetch(`https://frontend-task-jet.vercel.app/api/topics/`, {
+      method: "PUT", headers: { "Content-type": "application/json", },` is making a PUT request to
+      update a topic. */
+      const res = await fetch(
+        `https://frontend-task-jet.vercel.app/api/topics/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          /* The `body: JSON.stringify({ newTitle, newDescription })` is converting the `newTitle` and
+`newDescription` values into a JSON string. This JSON string is then sent as the body of the PUT
+request to update the topic. */
+          body: JSON.stringify({ newTitle, newDescription }),
+        }
+      );
 
       if (!res.ok) {
         throw new Error("Failed to update topic");
       }
 
+      /* The `router.refresh()` function is used to refresh the current page. In this code, it is called
+after the topic is successfully updated to ensure that the page reflects the updated data. */
       router.refresh();
+      /* The `router.push("/")` statement is used to navigate to the specified route ("/" in this case) after
+the topic is successfully updated. It redirects the user to the homepage ("/") of the application. */
       router.push("/");
     } catch (error) {
       console.log(error);

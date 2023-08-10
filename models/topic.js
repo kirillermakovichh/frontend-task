@@ -1,3 +1,5 @@
+/* This code is defining a Mongoose schema and model for a topic. */
+
 import mongoose, { Schema } from "mongoose";
 
 const topicSchema = new Schema(
